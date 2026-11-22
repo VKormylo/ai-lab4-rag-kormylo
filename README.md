@@ -116,6 +116,23 @@
    він відсікає 2 з 3 запитань без відповіді (q14, q15) ціною 1 хибної відмови з 12 (q01, 0,837). q13 (0,863)
    поріг не відсікає, тому відмову для нього має забезпечити інструкція промпту.
 
+## RAG-ланцюжок (крок 7)
+
+LLM: `qwen2.5:3b` (Ollama, GPU), temperature = 0, seed = 5, num_ctx = 8192. Пошук: B-dense, TOP_K = 5, τ = 0,847.
+Ланцюжок LCEL `rag_prompt | llm | StrOutputParser()`. Функція `ask()` спочатку шукає, потім перевіряє поріг і лише тоді
+викликає LLM. Базова лінія `plain_chain` отримує лише запитання.
+
+Системна інструкція:
+```
+You are an assistant that answers in English ONLY based on the provided context. After every statement give
+the source in the format [стор. N]. If the context does not contain the answer, write exactly: НЕМАЄ У ДОКУМЕНТІ.
+```
+Приклади:
+- правильна відповідь з посиланням, q03: «The half-life of carbon-14 is approximately 5,730 years. [стор. 28]»;
+- відмова інструкцією промпту, q13 (top-1 0,863 > τ): «НЕМАЄ У ДОКУМЕНТІ.», тоді як LLM без RAG відповідає з
+  власної пам'яті (Watson, Crick, Franklin, 1953);
+- відмова за порогом без виклику LLM: q14, q15 (t_gen = 0).
+
 ## Запуск
 
 ```bash
