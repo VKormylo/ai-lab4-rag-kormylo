@@ -40,6 +40,21 @@
 тому кожен чанк має один номер сторінки. Короткі чанки є залишками кінців сторінок і колонтитулами
 («3.2 • Carbohydrates 67», «Access for free at openstax.org»). У 35 чанках B кінець на кілька токенів обрізається моделлю.
 
+## Векторний індекс (крок 4)
+
+`InMemoryVectorStore` (langchain-core), нормовані ембединги e5-small на GPU (GTX 1660 Ti).
+Індексація: A, 487 чанків за 3,2 с; B, 269 чанків за 2,8 с. Перевірено, що `embed_query` додає префікс `query: `.
+
+Пробні запити (top-1, конфігурація A):
+
+| Запит | Схожість | Сторінка | Початок чанка |
+|-|-|-|-|
+| What is osmosis? | 0,881 | 135 | «Osmosis is the movement of free water molecules through a semipermeable…» |
+| What are the four types of biological macromolecules? | 0,882 | 55 | «…There are four major biological macromolecule classes…» |
+| Who discovered the structure of DNA? | 0,833 | 81 | «…The nitrogenous bases…» (Watson і Crick у главах 1–5 не згадуються) |
+
+Оцінки e5 стиснуті в діапазоні 0,82–0,89, тому поріг відмови доведеться обирати точно.
+
 ## Запуск
 
 ```bash
