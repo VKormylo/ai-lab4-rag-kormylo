@@ -1,0 +1,169 @@
+qid,mode,answer,pages,t_retr,t_gen,label,citation_ok
+q01,rag,НЕМАЄ У ДОКУМЕНТІ,,0.425,0.000,refusal_wrong,
+q01,llm,"Robert Hooke coined the term ""cell"" in 1665. This term was used in his publication titled ""Micrographia,"" published in 1665. Micrographia was a book that described and illustrated many of the things Hooke had observed through his microscope, including plant cells and animal cells. This publication was significant in the history of microscopy and cell theory.",,0,1.012,correct,
+q02,rag,[Sтор. 124] Singer and Nicolson proposed the fluid mosaic model in 1972.,124;124;148;131;149,0.018,6.887,correct,1
+q02,llm,"The fluid mosaic model of the plasma membrane was proposed by Singer and Nicolson in 1972. This model describes the structure of the cell membrane as a fluid mosaic, which means that the membrane is fluid and dynamic, with a mosaic of embedded proteins and phospholipid molecules.",,0,0.803,correct,
+q03,rag,"The half-life of carbon-14 is approximately 5,730 years. [стор. 28]",28;28;32;38;45,0.083,6.262,correct,1
+q03,llm,"The half-life of carbon-14 is approximately 5,730 years.",,0,0.381,correct,
+q04,rag,The sodium-potassium pump moves 3 sodium ions out of the cell and 2 potassium ions into the cell per cycle.,141;142;152;35;140,0.019,5.701,correct,0
+q04,llm,"The sodium-potassium pump, also known as the Na+/K+-ATPase, is a protein embedded in the cell membrane that actively transports sodium (Na+) and potassium (K+) ions against their concentration gradients. In each cycle, the sodium-potassium pump can move 3 sodium ions (Na+) out of the cell and 2 potassium ions (K+) into the cell.
+
+This is a simplified explanation, and the actual mechanism is a bit more complex. The pump uses the energy from ATP hydrolysis to facilitate this transport. In each cycle, the pump consumes one ATP molecule to move 3 Na+ ions out of the cell and 2 K+ ions into the cell, effectively creating a concentration gradient that allows these ions to move down their concentration gradients through passive transport mechanisms.
+
+So, to directly answer your question: In each cycle, the sodium-potassium pump moves 3 sodium ions (Na+) out of the cell and 2 potassium ions (K+) into the cell.",,0,2.479,correct,
+q05,rag,"Prokaryotic cells range in diameter from 0.1 to 5.0 μm, while eukaryotic cells have diameters ranging from 10 to 100 μm.",95;96;119;94;111,0.018,4.894,correct,0
+q05,llm,"Prokaryotic cells typically have a diameter range of about 0.5 to 5 micrometers (μm), while eukaryotic cells can vary greatly in size, with most eukaryotic cells ranging from about 10 to 100 μm in diameter. This means that prokaryotic cells are generally smaller than eukaryotic cells.",,0,1.096,hallucination,
+q06,rag,"Osmosis is the movement of free water molecules through a semipermeable membrane according to the water's concentration gradient across the membrane, which is inversely proportional to the solutes' concentration. While diffusion transports material across membranes and within cells, osmosis transports only water across a membrane and the membrane limits the solutes' diffusion in the water. Not surprisingly, the aquaporins that facilitate water movement play a large role in osmosis, most prominently in red blood cells and the membranes of kidney tubules.",135;137;135;136;149,0.017,8.238,correct,0
+q06,llm,"Osmosis is a process by which water and other substances move across a semipermeable membrane from an area of higher concentration to an area of lower concentration. This process is driven by the difference in concentration gradients, a principle that underlies many biological and chemical systems.
+
+In biological contexts, osmosis is crucial for maintaining the balance of water and solutes within cells. For example, in plant cells, osmosis helps to maintain turgor pressure, which is essential for the plant's structure and rigidity. In animal cells, osmosis helps to regulate the internal environment by balancing the concentration of solutes inside and outside the cell.
+
+Osmosis is a fundamental concept in chemistry and biology, and it plays a critical role in various natural processes and biological systems.",,0,1.993,wrong,
+q07,rag,"Isotopes are different forms of the same atom that vary only in the number of neutrons they possess. They have the same number of protons but different numbers of neutrons in their nuclei, resulting in different atomic mass numbers.",27;29;52;26;35,0.018,5.159,correct,0
+q07,llm,"Isotopes are atoms of the same element that have the same number of protons in their atomic nuclei, which defines their identity as a particular element. However, the number of neutrons in the nucleus can vary, leading to different isotopes of the same element.
+
+For example, carbon has three naturally occurring isotopes:
+1. **Carbon-12** (6 protons, 6 neutrons)
+2. **Carbon-13** (6 protons, 7 neutrons)
+3. **Carbon-14** (6 protons, 8 neutrons)
+
+The atomic number (number of protons) determines the element, but the atomic mass (sum of protons and neutrons) can vary, leading to different isotopes. Isotopes of an element have the same chemical properties but may differ in physical properties, such as mass.
+
+Isotopes can be stable or unstable (radioactive). Unstable isotopes are known as radioisotopes and are used in various applications, including medical imaging, dating fossils, and nuclear reactions.",,0,2.666,correct,
+q08,rag,"Endocytosis is a type of active transport that moves particles, such as large molecules, parts of cells, and even whole cells, into a cell. It involves the cell's plasma membrane invaginating, forming a pocket around the target particle. The pocket then pinches off, resulting in the particle containing itself in a newly created intracellular vesicle formed from the plasma membrane. [стор. 143]",144;143;146;145;119,0.018,7.256,correct,1
+q08,llm,"Endocytosis is a cellular process by which a cell engulfs and internalizes extracellular materials, such as molecules, ions, or even large particles, by forming a vesicle around them. This process is crucial for the cell to take in substances that are not normally able to diffuse through the cell membrane. 
+
+There are three main types of endocytosis:
+
+1. **Phagocytosis (cell eating)**: This is the process by which a cell engulfs and internalizes large particles or cells. It is often used by immune cells like macrophages to engulf pathogens.
+
+2. **Pinocytosis (cell drinking)**: This is the process by which cells take in small amounts of extracellular fluid and dissolved substances. It is essentially the cellular equivalent of drinking.
+
+3. **Receptor-mediated endocytosis**: This is a highly selective form of endocytosis where specific molecules bind to receptors on the cell membrane. Once bound, the receptors cluster and form a vesicle that internalizes the bound molecules. This process is crucial for the uptake of nutrients, hormones, and other signaling molecules.
+
+Endocytosis plays a vital role in various cellular processes, including nutrient uptake, waste removal, and the internalization of signaling molecules. It is a fundamental process in cellular biology and is essential for the proper functioning of cells.",,0,3.385,correct,
+q09,rag,"The four major classes of biological macromolecules are carbohydrates, lipids, proteins, and nucleic acids. Proteins are made up of amino acids as their monomers.",55;72;73;87;86,0.017,5.429,correct,0
+q09,llm,"The four major classes of biological macromolecules are carbohydrates, lipids, proteins, and nucleic acids. These macromolecules are essential for various biological functions and are crucial for the structure and function of living organisms.
+
+### Proteins
+Proteins are composed of monomers called amino acids. The four major classes of biological macromolecules are:
+
+1. **Carbohydrates**: These include sugars and complex carbohydrates like cellulose and starch.
+2. **Lipids**: These include fats, oils, and waxes, such as triglycerides, phospholipids, and sterols.
+3. **Proteins**: These are made up of amino acids.
+4. **Nucleic Acids**: These include DNA (deoxyribonucleic acid) and RNA (ribonucleic acid).
+
+### Monomers of Proteins
+Proteins are constructed from a series of monomers called amino acids. There are 20 different types of amino acids that can be found in proteins. The sequence of these amino acids determines the protein's structure and function. The monomers that make up proteins are:
+
+- **Amino Acids**: The basic building blocks of proteins. Each amino acid has a central carbon atom (α-carbon) bonded to a hydrogen atom, an amino group (NH2), a carboxyl group (COOH), and a side chain (R group) that varies among different amino acids.
+
+### Structure of Proteins
+Proteins can have different structures, including:
+
+- **Primary Structure**: The sequence of amino acids in a protein.
+- **Secondary Structure**: The local folding of the polypeptide chain, such as α-helices and β-sheets.
+- **Tertiary Structure**: The overall three-dimensional shape of the protein, which is stabilized by various interactions like hydrogen bonds, hydrophobic interactions, and disulfide bridges.
+- **Quaternary Structure**: The arrangement of multiple polypeptide chains (subunits) that come together to form a functional protein.
+
+### Summary
+- **Four Major Classes of Biological Macromolecules**: Carbohydrates, Lipids, Proteins, and Nucleic Acids.
+- **Monomers of Proteins**: Amino Acids.
+
+Proteins are fundamental to many biological processes, including enzymatic reactions, structural support, and signaling.",,0,5.908,correct,
+q10,rag,"Saturated and unsaturated fatty acids differ in their structure, particularly in the presence of double bonds in their hydrocarbon chains. Unsaturated fatty acids have one or more double bonds, which can be in a cis or trans configuration. These double bonds cause a bend or ""kink"" in the fatty acid chain, preventing the fatty acids from packing tightly together. This results in unsaturated fats being liquid at room temperature and are often referred to as oils. On the other hand, saturated fatty acids have hydrocarbon chains connected by single bonds only, and they do not have any double bonds. This results in saturated fats having a straight chain and being solid at room temperature.
+
+In terms of their effects on blood cholesterol and arteries, unsaturated fats help to lower blood cholesterol levels. They are usually of plant origin and contain cis unsaturated fatty acids. Cis and trans indicate the configuration of the molecule around the double bond. If hydrogens are present in the same plane, it is a cis fat. If the hydrogen atoms are on two different planes, it is a trans fat. The cis double bond causes a bend or ""kink"" that prevents the fatty acids from packing tightly, keeping them liquid at room temperature.
+
+In contrast, saturated fats might contribute to plaque formation in the arteries. They are found in animal fats and are examples of saturated fats, such as stearic acid and palmitic acid, which are common in meat. Unsaturated fats, especially polyunsaturated fats, are considered beneficial for heart health. For instance, omega-3 fatty acids, which are polyunsaturated, are essential for humans and are found in foods like fish and certain oils.
+
+In summary, unsaturated fats are liquid at room temperature and help to lower blood cholesterol levels, whereas saturated fats are solid at room temperature and might contribute to plaque formation in the arteries.",68;68;69;71;128,0.018,8.465,correct,0
+q10,llm,"Saturated and unsaturated fatty acids differ in their molecular structure, which in turn affects their physical properties and their impact on health, particularly on blood cholesterol levels and artery health.
+
+### Structure Differences:
+1. **Saturated Fatty Acids**: These fatty acids have no double bonds between carbon atoms in their carbon chains. The carbon atoms in saturated fatty acids are fully bonded to hydrogen atoms, resulting in a relatively rigid and compact structure. Examples of saturated fatty acids include palmitic acid (C16:0) and stearic acid (C18:0).
+
+2. **Unsaturated Fatty Acids**: These fatty acids contain one or more double bonds between carbon atoms in their carbon chains. The presence of these double bonds causes the fatty acid chains to bend and kink, resulting in a more fluid and less compact structure. Unsaturated fatty acids can be further classified into monounsaturated and polyunsaturated fatty acids:
+   - **Monounsaturated Fatty Acids**: These fatty acids have one double bond in their carbon chain. Examples include oleic acid (C18:1).
+   - **Polyunsaturated Fatty Acids**: These fatty acids have two or more double bonds in their carbon chain. Examples include linoleic acid (C18:2) and alpha-linolenic acid (C18:3).
+
+### Effects on Blood Cholesterol and Arteries:
+1. **Effect on Blood Cholesterol**:
+   - **Saturated Fatty Acids**: They are known to increase blood cholesterol levels, particularly low-density lipoprotein cholesterol (LDL cholesterol), also known as ""bad"" cholesterol. This is because saturated fatty acids can increase the absorption of cholesterol in the intestines and reduce the clearance of cholesterol from the blood.
+   - **Unsaturated Fatty Acids**: They generally do not have a significant effect on blood cholesterol levels. In fact, some types of unsaturated fatty acids, such as polyunsaturated fatty acids, can help lower blood cholesterol levels by increasing the levels of high-density lipoprotein cholesterol (HDL cholesterol), also known as ""good"" cholesterol.
+
+2. **Effect on Arteries**:
+   - **Saturated Fatty Acids**: They can contribute to the development of atherosclerosis, a condition where cholesterol and other substances build up in the arteries, forming plaques that can narrow the arteries and reduce blood flow. This can lead to conditions such as coronary artery disease, which can cause heart attacks and strokes.
+   - **Unsaturated Fatty Acids**: They are generally considered beneficial for cardiovascular health. Polyunsaturated fatty acids, in particular, can help reduce inflammation and improve the flexibility of the arteries, which can help prevent the formation of plaques and reduce the risk of cardiovascular diseases.
+
+In summary, the structure of fatty acids, whether they are saturated or unsaturated, plays a crucial role in their impact on blood cholesterol levels and the health of arteries. Unsaturated fatty acids, especially polyunsaturated ones, are generally more beneficial for cardiovascular health, while saturated fatty acids can contribute to the development of cardiovascular diseases.",,0,8.012,correct,
+q11,rag,"A cell can't simply keep growing bigger and bigger because as a cell increases in size, its surface area-to-volume ratio decreases. This means that the cell's plasma membrane, which is responsible for transporting materials in and out of the cell, has less surface area relative to its volume as it grows larger. This makes it less efficient for the cell to transport materials, as the rate of diffusion required for the increased volume is not supported by the cell's surface area. Therefore, as a cell grows, it becomes less efficient and may either divide to create two smaller cells or die due to the inability to maintain sufficient surface area for the required diffusion. [стор. 96]",102;103;132;142;96,0.025,8.240,correct,1
+q11,llm,"A cell cannot simply keep growing bigger indefinitely for several biological reasons:
+
+1. **Nutrient Limitation**: As a cell grows, its surface area to volume ratio decreases. This means that the cell's surface area, where nutrients and oxygen enter, becomes relatively smaller compared to its volume. This makes it increasingly difficult for the cell to obtain the necessary nutrients and oxygen it needs to survive and function properly. Eventually, the cell will run out of nutrients and waste products will accumulate, leading to cell death.
+
+2. **Oxygen Supply**: The cell's mitochondria, the powerhouses of the cell, require oxygen to produce energy in the form of ATP. As the cell grows, the distance between the cell membrane and the mitochondria increases, making it harder for oxygen to diffuse into the cell. This can lead to a buildup of harmful byproducts like lactic acid, which can cause the cell to die.
+
+3. **Cell Division**: Cells have a finite number of divisions they can undergo before they reach a certain size. This is governed by the cell cycle and the cell's ability to replicate its DNA and divide. Once a cell reaches a certain size, it can no longer divide, which prevents it from continuing to grow indefinitely.
+
+4. **Structural Integrity**: As a cell grows, its internal structures, such as the nucleus and organelles, also need to grow. However, the cell's cytoskeleton and other structural components can only support a certain size. If a cell grows too large, its internal structures can become overstressed, leading to the cell's collapse or death.
+
+5. **Energy Efficiency**: Larger cells require more energy to maintain their internal structures and functions. As a cell grows, the efficiency of energy production and distribution decreases, making it increasingly difficult for the cell to sustain itself.
+
+6. **Genetic and Metabolic Constraints**: There are genetic and metabolic constraints that limit the size of a cell. For example, the rate of protein synthesis and degradation, as well as the efficiency of metabolic pathways, can be affected by the cell's size.
+
+In summary, a cell's growth is regulated by a complex interplay of biological processes, and it cannot simply continue to grow indefinitely without facing significant challenges related to nutrient supply, oxygen diffusion, structural integrity, and energy efficiency.",,0,5.669,correct,
+q12,rag,"Fish and plants in a pond survive the winter when the surface freezes because they can adapt to the cold environment in different ways. Fish often have a layer of fat under their skin and can also enter a state of torpor, where their metabolic rate slows down significantly, allowing them to survive with less energy. Plants in the pond, such as submerged aquatic plants, can also survive by having their cells enter a state of dehydration, where they lose water and become more resistant to freezing. Some plants also have antifreeze proteins that prevent ice crystals from forming inside their cells. In contrast, plants that are not submerged in the water, like those on the pond's surface, can freeze and die. Therefore, the survival of fish and submerged plants in the pond is due to their physiological adaptations, while plants on the surface cannot survive the freezing conditions.",40;137;40;14;42,0.017,9.137,hallucination,0
+q12,llm,"Fish and plants in a pond can survive the winter even when the surface freezes due to several mechanisms that allow them to adapt to the cold conditions. Here are the key factors:
+
+### Fish
+1. **Hibernation or Torpor**: Many fish species enter a state of reduced activity known as hibernation or torpor during the winter. This state allows them to reduce their metabolic rate, which conserves energy and helps them survive in colder temperatures.
+2. **Thermoregulation**: Some fish species can maintain a core body temperature above the surrounding water by circulating warm blood through their bodies. This is particularly true for species that live in cold water year-round.
+3. **Metabolic Rate Reduction**: Fish can lower their metabolic rate, which reduces the amount of energy they need to maintain their body temperature. This adaptation helps them survive in environments where the water temperature is too low for sustained activity.
+4. **Hibernation in Deep Water**: Many fish species will move to deeper, warmer water during the winter. This allows them to maintain a more stable body temperature and reduces the risk of freezing.
+
+### Plants
+1. **Freezing Tolerance**: Some aquatic plants have developed mechanisms to tolerate freezing temperatures. They can produce antifreeze proteins or other compounds that prevent ice crystals from forming inside their cells, thus avoiding cell damage.
+2. **Roots and Bulbs**: Many aquatic plants have roots or bulbs that remain buried in the soil or sediment, which is warmer than the water above. This insulation helps protect the plant from extreme cold.
+3. **Water Content**: Some aquatic plants can tolerate ice formation in their tissues, as long as the ice does not cause cellular damage. They can also produce ice nucleating agents that help form ice crystals in their tissues, which can then melt as the temperature rises.
+4. **Seasonal Adaptations**: Some aquatic plants enter a state of dormancy during the winter, reducing their metabolic rate and minimizing water loss. They may also produce antifreeze compounds to protect their tissues from ice damage.
+
+### Combined Effects
+In many cases, fish and plants in a pond can survive the winter because they are part of a complex ecosystem where multiple species interact and rely on each other. For example, fish may eat smaller organisms that are also adapted to cold conditions, providing them with food sources even when the surface freezes.
+
+In summary, the combination of physiological adaptations, behavioral strategies, and ecological interactions allows fish and plants in a pond to survive the winter when the surface freezes.",,0,6.200,hallucination,
+q13,rag,НЕМАЄ У ДОКУМЕНТІ.,50;82;14;82;85,0.022,4.216,refusal_ok,
+q13,llm,"The double-helix structure of DNA was discovered by James Watson and Francis Crick, with crucial contributions from Rosalind Franklin and Maurice Wilkins. However, the key breakthrough came when Watson and Crick synthesized the available data, including Rosalind Franklin's X-ray diffraction images, to propose the structure. This discovery was made in 1953.",,0,1.035,hallucination,
+q14,rag,НЕМАЄ У ДОКУМЕНТІ,,0.017,0.000,refusal_ok,
+q14,llm,"Glycolysis, the first step in cellular respiration, produces a net of 2 ATP molecules per molecule of glucose under aerobic conditions. However, under anaerobic conditions (without oxygen), glycolysis still produces 2 ATP molecules per molecule of glucose, but it also produces NADH molecules and lactic acid.
+
+In aerobic conditions, glycolysis still produces 2 ATP molecules per molecule of glucose, but the process of oxidative phosphorylation (which occurs in the mitochondria) can produce up to 34 ATP molecules per glucose molecule, depending on the efficiency of the electron transport chain and the ATP synthase activity. Therefore, the total ATP production from glycolysis and oxidative phosphorylation is 2 ATP from glycolysis plus 34 ATP from oxidative phosphorylation, totaling 36 ATP molecules per glucose molecule.",,0,2.093,hallucination,
+q15,rag,НЕМАЄ У ДОКУМЕНТІ,,0.017,0.000,refusal_ok,
+q15,llm,"Mitosis is a fundamental process in cell biology where a single cell divides into two identical daughter cells. The process of mitosis can be divided into several distinct phases, which are:
+
+1. **Prophase**: 
+   - The chromatin condenses into distinct chromosomes, each consisting of two identical sister chromatids joined at the centromere.
+   - The nuclear envelope breaks down, and the nucleolus disappears.
+   - The mitotic spindle, composed of microtubules, begins to form. The spindle fibers extend from the centrosomes (which have moved to opposite poles of the cell).
+   - The centrosomes start to move to opposite poles of the cell.
+
+2. **Metaphase**: 
+   - The chromosomes align at the equatorial plate (also known as the metaphase plate), which is an imaginary line equidistant from the two poles of the cell.
+   - The chromosomes are attached to the spindle fibers at their centromeres, forming a structure called the kinetochore.
+   - The spindle fibers are attached to the kinetochores of the chromosomes, ensuring proper alignment.
+
+3. **Anaphase**: 
+   - The sister chromatids are pulled apart by the spindle fibers and are moved to opposite poles of the cell.
+   - The centromeres are cleaved, and the sister chromatids are separated into individual chromosomes.
+   - The chromosomes are now at the opposite poles of the cell.
+
+4. **Telophase**: 
+   - The chromosomes reach the opposite poles of the cell and begin to decondense.
+   - The nuclear envelope reforms around each set of chromosomes, and the nucleolus reappears.
+   - The spindle fibers disassemble, and the cell begins to prepare for cytokinesis (the division of the cytoplasm).
+
+5. **Cytokinesis**: 
+   - In animal cells, cytokinesis is initiated by the formation of the cleavage furrow, which pinches the cell in two.
+   - In plant cells, a cell plate forms at the center of the cell, which later develops into a new cell wall, dividing the cell into two daughter cells.
+
+It's important to note that in some organisms, such as fungi and plants, there are additional phases or variations of these main phases. For example, in some fungi, there is a phase called the ""interkinesis"" between the telophase of one mitotic division and the prophase of the next, which is not present in animal cells.",,0,6.104,hallucination,
