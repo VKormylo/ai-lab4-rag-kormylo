@@ -1,0 +1,16 @@
+qid,question,pages,type,reference_answer
+q01,"In what year did Robert Hooke coin the term ""cell"", and in which publication?",93,fact,"1665, in Micrographia (cork tissue under a lens)"
+q02,In what year did Singer and Nicolson propose the fluid mosaic model of the plasma membrane?,124,fact,1972
+q03,What is the half-life of carbon-14?,28,fact,"about 5,730 years"
+q04,How many sodium and potassium ions does the sodium-potassium pump move per cycle?,141,fact,"3 Na+ out of the cell for every 2 K+ into the cell"
+q05,What is the diameter range of prokaryotic cells compared to eukaryotic cells?,95;119,fact,"prokaryotic 0.1-5.0 um, eukaryotic 10-100 um"
+q06,What is osmosis?,135;148,definition,"movement of free water through a semipermeable membrane down the water concentration gradient (inversely related to solute concentration)"
+q07,What are isotopes?,28;52,definition,"forms of the same element with the same number of protons but a different number of neutrons"
+q08,What is endocytosis?,143;148,definition,"active transport that brings large particles, molecules or whole cells into the cell by invagination of the plasma membrane"
+q09,"What are the four major classes of biological macromolecules, and which monomers make up proteins?",55;73;86,multipage,"carbohydrates, lipids, proteins, nucleic acids; proteins are made of amino acids"
+q10,"How do saturated and unsaturated fatty acids differ in structure, and how do they affect blood cholesterol and arteries?",67;68,multipage,"saturated: only single C-C bonds; unsaturated: one or more double bonds (kink, liquid); unsaturated lower blood cholesterol, saturated may contribute to arterial plaque"
+q11,Why can't a cell simply keep growing bigger and bigger?,96;119,paraphrase,"surface area-to-volume ratio decreases, membrane cannot support diffusion for the larger volume"
+q12,Why do fish and plants in a pond survive the winter when the surface freezes?,40,paraphrase,"ice is less dense than water, floats and forms an insulating layer that protects life below from freezing"
+q13,Who discovered the double-helix structure of DNA?,,unanswerable,
+q14,How many ATP molecules are produced during glycolysis?,,unanswerable,
+q15,What are the phases of mitosis?,,unanswerable,
