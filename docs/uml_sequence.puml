@@ -1,0 +1,60 @@
+@startuml uml_sequence
+title Виклик ask() (src/rag.py): B-dense, TOP_K = 5, THRESHOLD = 0.847
+skinparam shadowing false
+skinparam defaultFontSize 11
+autonumber
+
+actor "~__main__\n(src/rag.py)" as main
+participant "ask()" as ask
+participant "InMemoryVectorStore\n(index/B.json, 269 чанків)" as store
+participant "HuggingFaceEmbeddings\nmultilingual-e5-small" as emb
+participant "format_docs()" as fmt
+participant "rag_chain\n(rag_prompt | llm | StrOutputParser())" as chain
+participant "ChatOllama\nqwen2.5:3b" as llm
+
+main -> ask : ask(q["question"], store, k=TOP_K=5, threshold=THRESHOLD=0.847)
+activate ask
+note right of ask : t0 = time.perf_counter()
+ask -> store : similarity_search_with_score(question, k=5)
+activate store
+store -> emb : embed_query(question)
+activate emb
+note right of emb
+  prompt = QUERY_PREFIX = "query: "
+  normalize_embeddings = True
+end note
+opt Е10 (src/experiment.py): без префіксів
+  note over emb : prompt = "" для запиту і чанків\n(інша шкала оцінок, τ треба калібрувати заново)
+end
+emb --> store : вектор запиту (d = 384)
+deactivate emb
+store -> store : косинусна схожість з 269 векторами,\nсортування, top-5
+store --> ask : hits = [(Document, score)] × 5
+deactivate store
+note right of ask : t1 = time.perf_counter()\nпошук ≈ 0.018 с (медіана)
+
+alt not hits or hits[0][1] < 0.847
+  ask --> main : (REFUSAL = "НЕМАЄ У ДОКУМЕНТІ", [], t1 - t0, 0.0)
+  note left of ask : q01 (0.837), q14 (0.846), q15 (0.846):\nLLM не викликається
+else top-1 >= 0.847
+  ask -> fmt : format_docs(docs)
+  activate fmt
+  fmt --> ask : "[стор. N] текст чанка" × 5
+  deactivate fmt
+  ask -> chain : invoke({"context": ..., "question": question})
+  activate chain
+  chain -> chain : rag_prompt: SYSTEM + "Context: ... Question: ..."
+  chain -> llm : messages (temperature=0, seed=5, num_ctx=8192)
+  activate llm
+  llm --> chain : AIMessage
+  deactivate llm
+  note right of llm : генерація ≈ 6.6 с (медіана),\n99.6 % часу відповіді
+  chain -> chain : StrOutputParser()
+  chain --> ask : text
+  deactivate chain
+  ask -> ask : pages = [d.metadata["page"] for d in docs]
+  ask --> main : (text, pages, t1 - t0, time.perf_counter() - t1)
+end
+deactivate ask
+main -> main : w.writerow([q["qid"], "rag", text, pages, t_r, t_g, label, citation_ok])\n(label і citation_ok порожні, заповнюються вручну на кроці 8)
+@enduml

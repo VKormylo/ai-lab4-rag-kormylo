@@ -1,0 +1,76 @@
+@startuml uml_components
+title RAG над Biology 2e (варіант 5): діаграма компонентів
+skinparam componentStyle uml2
+skinparam shadowing false
+skinparam defaultFontSize 11
+skinparam nodesep 25
+skinparam ranksep 35
+top to bottom direction
+
+component "src/config.py" as config
+note right of config
+  <b>Параметри варіанта 5</b> (імпортують ingest, chunking,
+  index, eval_retrieval, rag, experiment):
+  EMB_MODEL = intfloat/multilingual-e5-small
+  QUERY_PREFIX, PASSAGE_PREFIX = "query: ", "passage: "
+  CHUNKS = {A: (256, 32), B: (512, 64)}
+  CONFIG = "B", метод пошуку: dense
+  TOP_K = 5, THRESHOLD = 0.847
+  LLM_MODEL = qwen2.5:3b, SEED = 5
+end note
+
+package "1. Етап індексації (один раз)" as P1 {
+  artifact "data/document.pdf\n(стор. 29–180 Biology 2e,\nsrc/extract_part.py)" as doc
+  component "src/ingest.py\nload_pages()" as ingest
+  artifact "data/pages.json" as pages
+  component "src/chunking.py\nmake_chunks()" as chunking
+  artifact "data/chunks_A.json\ndata/chunks_B.json" as chunks
+  component "src/index.py\nget_embeddings(), load_store()" as index
+  database "index/A.json, index/B.json\n(InMemoryVectorStore)" as store
+}
+
+package "2. Етап відповіді на запитання" as P2 {
+  artifact "eval/questions.csv" as questions
+  component "src/rag.py\nask(), format_docs(),\nrag_chain, plain_chain" as rag
+  artifact "eval/answers.csv" as answers
+}
+
+package "3. Оцінювання" as P3 {
+  component "src/eval_retrieval.py\nbm25_ranking(), rrf(),\nhit_at_k(), reciprocal_rank()" as evalr
+  component "src/eval_answers.py\n(+ eval/answers_labeled.csv)" as evala
+  component "src/experiment.py\nЕ10: префікси e5" as exp
+  component "src/git_timeline.py\n(git log)" as timeline
+  artifact "eval/*.csv,\nreports/figures/*.png" as reports
+}
+
+node "Hugging Face:\nmultilingual-e5-small\n(d = 384, ліміт 512, GPU)" as emb
+node "Ollama: qwen2.5:3b\n(temperature = 0, seed = 5,\nnum_ctx = 8192)" as llm
+node "rank_bm25:\nBM25Okapi" as bm25
+
+config -[hidden]down-> doc
+
+doc -right-> ingest
+ingest -right-> pages
+pages -down-> chunking
+chunking -left-> chunks
+chunks -left-> index
+index -down-> store
+index .right.> emb : embed_documents()\n"passage: " + чанк
+
+questions -right-> rag
+store -down-> rag : load_store("B")
+rag -right-> answers
+rag .right.> emb : embed_query()\n"query: " + запитання
+rag .down.> llm : rag_chain.invoke()
+
+questions -down-> evalr
+store -down-> evalr
+evalr .down.> bm25
+answers -down-> evala
+chunks .down.> exp
+exp .right.> emb : 4 варіанти префіксів
+evalr -down-> reports
+evala -down-> reports
+exp -down-> reports
+timeline -down-> reports
+@enduml
